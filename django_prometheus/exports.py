@@ -111,8 +111,9 @@ def ExportToDjangoView(request):
         registry = prometheus_client.CollectorRegistry()
         multiprocess.MultiProcessCollector(registry)
     elif 'prometheus_distributed' in os.environ:
-        from prometheus_client.distributed import DistributedValue
-        _ValueClass = DistributedValue
+        from prometheus_client.distributed import DistributedCollector
+        registry = prometheus_client.CollectorRegistry()
+        DistributedCollector(registry)
     else:
         registry = prometheus_client.REGISTRY
     metrics_page = prometheus_client.generate_latest(registry)
