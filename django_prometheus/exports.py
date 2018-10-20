@@ -110,7 +110,7 @@ def ExportToDjangoView(request):
     if 'prometheus_multiproc_dir' in os.environ:
         registry = prometheus_client.CollectorRegistry()
         multiprocess.MultiProcessCollector(registry)
-    elif 'prometheus_distributed' in os.environ:
+    elif 'prometheus_django_cache' in os.environ:
         from prometheus_client.distributed import DistributedCollector
         registry = prometheus_client.CollectorRegistry()
         DistributedCollector(registry)
