@@ -1,6 +1,6 @@
 # django-prometheus
 
-Version with support of metrics storage in dajngo cache realized in [this version of python_client](https://github.com/Sovetnikov/django-prometheus)
+Version with support of metrics storage in django cache realized in [this version of python_client](https://github.com/Sovetnikov/django-prometheus)
 
 ### Quickstart
 
